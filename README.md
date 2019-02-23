@@ -1,6 +1,8 @@
 # tf\_aks\_namespace
 
-TBA
+Create Kubernetes namespaces with corresponding pull secret. This module will
+create the namespaces with propper labels and annotations and create Docker pull
+ssecrets for downloading container images from a container registry.
 
 ## Usage
 
