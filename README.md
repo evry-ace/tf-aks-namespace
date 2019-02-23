@@ -8,10 +8,12 @@ ssecrets for downloading container images from a container registry.
 
 ```hcl
 module "namespaces" {
-  namespaces = ["a-test, "a-prod"]
-  ownwer = "The A-Team"
+  source = "github.com/evry-ace/tf_aks_cluster_admin"
 
-  registry_url = "${modules.acr.registry_url}"
+  namespaces = ["a-test, "a-prod"]
+  ownwer     = "The A-Team"
+
+  registry_url  = "${modules.acr.registry_url}"
   registry_user = "${modules.acr.registry_user}"
   registry_pass = "${modules.acr.registry_pass}"
 
