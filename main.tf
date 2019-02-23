@@ -27,7 +27,7 @@ resource "kubernetes_secret" "secret" {
   }
 
   data {
-    ".dockerconfigjson" = "{\"auths\": {\"https:\/\/index.docker.io\/v1\/\": {\"username\": \"${var.registry_user}\", \"password\": \"${var.registry_pass}\",\"auth\": \"${base64encode("${var.registry_url}:${var.registry_pass}")}\"}}}"
+    ".dockerconfigjson" = "{\"auths\": {\"https:\/\/index.docker.io\/v1\/\": {\"username\": \"${var.registry_user}\", \"password\": \"${var.registry_pass}\",\"auth\": \"${base64encode("${var.registry_user}:${var.registry_pass}")}\"}}}"
   }
 
   type = "kubernetes.io/dockerconfigjson"
